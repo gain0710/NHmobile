@@ -138,7 +138,7 @@ const App: React.FC = () => {
                   <div className="flex justify-between items-end">
                     {/* Left: Text Area */}
                     <div className="max-w-[210px] pb-4">
-                      <h4 className="text-white/60 text-xs font-normal mb-2 tracking-tight">다이렉트 해외여행보험</h4>
+                      <h4 className="text-white/60 text-xs font-bold mb-2 tracking-tight">다이렉트 해외여행보험</h4>
                       <h2 className="text-2xl font-semibold text-white leading-tight mb-4">
                         해외여행보험<br />보험료 20% 인하
                       </h2>
