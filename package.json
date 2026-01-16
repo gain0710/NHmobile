@@ -1,5 +1,5 @@
 {
-  "name": "nh-nonghyup-p&c-mobile-main-wireframe",
+  "name": "nh-nonghyup-pc-mobile-main-wireframe",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,7 +16,8 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
     "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
