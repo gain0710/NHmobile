@@ -101,8 +101,8 @@ const App: React.FC = () => {
         )}
 
         {/* Right: Mobile App UI (High-Fidelity) */}
-        <div className={`flex-none mx-auto ${viewMode === 'analysis' ? 'hidden xl:block' : 'block'}`}>
-          <div className="w-[393px] h-[852px] bg-[#F1F5F9] rounded-[47px] border-[12px] border-slate-900 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col">
+        <div className={`flex-none mx-auto bg-[#EFF3F7] ${viewMode === 'analysis' ? 'hidden xl:block' : 'block'}`}>
+          <div className="w-[393px] h-[852px] bg-[#EFF3F7] rounded-[47px] border-[12px] border-slate-900 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col">
 
             {/* Status Bar */}
             <div className="h-12 bg-[#046fd9] flex items-center justify-between px-10 pt-4 text-white">
@@ -114,7 +114,7 @@ const App: React.FC = () => {
             </div>
 
             {/* Scrollable Content */}
-            <div className="flex-1 overflow-y-auto no-scrollbar bg-[#F8FAFC]">
+            <div className="flex-1 overflow-y-auto no-scrollbar bg-[#EFF3F7]">
 
               {/* HERO BANNER SECTION */}
               <section className="bg-[#046fd9] rounded-b-[24px] overflow-hidden relative shadow-lg">
@@ -287,10 +287,6 @@ const App: React.FC = () => {
               </footer>
             </div>
 
-            {/* FLOATING ACTION BUTTON */}
-            <button className="absolute bottom-24 right-8 w-14 h-14 bg-[#046fd9] rounded-full shadow-2xl shadow-blue-900/40 flex items-center justify-center text-white border-4 border-white z-20 hover:scale-110 active:scale-95 transition-all">
-              <Plus className="w-8 h-8" />
-            </button>
 
             {/* BOTTOM NAV */}
             <nav className="absolute bottom-0 w-full bg-white/95 backdrop-blur-md border-t border-slate-100 h-20 flex items-center justify-around px-4 pb-4">
@@ -334,7 +330,7 @@ const ActionButton: React.FC<{ icon: React.ReactNode; label: string; color: stri
 };
 
 const InsuranceCard: React.FC<{ title: string; status: string; price: string; date: string; isWarning?: boolean }> = ({ title, status, price, date, isWarning }) => (
-  <div className="p-5 bg-[#F5F8FB] rounded-[20px] transition-all cursor-pointer group">
+  <div className="p-5 bg-white rounded-[20px] transition-all cursor-pointer group">
     <div className="flex justify-between items-center mb-3">
       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${status === '정상' ? 'bg-blue-50 text-[#046fd9]' : 'bg-red-50 text-red-600'}`}>
         {status}
