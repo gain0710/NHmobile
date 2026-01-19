@@ -20,6 +20,7 @@ import icon3 from './img/icon3.png';
 import icon4 from './img/icon4.png';
 import mainLogoWhite from './img/main_logo_white.png';
 import warningIcon from './img/warning_icon.png';
+import bellIcon from './img/Bell.png';
 
 
 // NH NongHyup P&C Logo
@@ -180,7 +181,7 @@ const App: React.FC = () => {
 
               {/* ASSET DASHBOARD */}
               <section className="px-6 -mt-6 relative z-40 mb-6">
-                <div className="bg-white p-5 rounded-[16px] shadow-xl shadow-slate-200/60 border border-slate-50 flex flex-col gap-2">
+                <div className="bg-white pt-5 pb-5 px-5 rounded-[16px] shadow-xl shadow-slate-200/60 border border-slate-50 flex flex-col gap-2">
                   {/* Title and Top Arrow */}
                   <div className="flex items-center justify-between">
                     <div>
@@ -190,11 +191,11 @@ const App: React.FC = () => {
                   </div>
 
                   {/* Progress Bar Section */}
-                  <div className="relative pt-2 pb-6">
+                  <div className="relative pt-2 pb-0">
                     {/* Progress Background Line (pt-2(8px) + center(16px) - half-line(2px) = 22px) */}
                     <div className="absolute top-[22px] left-0 w-full h-1 bg-slate-100 rounded-full"></div>
                     {/* Active Progress Line */}
-                    <div className="absolute top-[22px] left-0 w-1/2 h-1 bg-[#046fd9] rounded-full"></div>
+                    <div className="absolute top-[22px] left-0 w-1/2 h-1 bg-[#68B0F8] rounded-full"></div>
 
                     <div className="relative flex justify-between items-start">
                       {/* Step 1: Received */}
@@ -214,7 +215,7 @@ const App: React.FC = () => {
                         </div>
                         <span className="text-[14px] font-normal text-slate-900">심사중</span>
                         {/* Status Tag */}
-                        <div className="absolute top-16 left-1/2 -translate-x-1/2 whitespace-nowrap bg-red-50 text-[#FF4646] text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        <div className="mt-1.5 whitespace-nowrap bg-red-50 text-[#FF4646] text-[10px] font-bold px-2 py-0.5 rounded-full">
                           서류보완필요
                         </div>
                       </div>
@@ -242,24 +243,26 @@ const App: React.FC = () => {
               </section>
 
               {/* ALERT BAR */}
-              <section className="px-6 mb-6">
-                <div className="bg-gradient-to-r from-red-50 to-white p-4 rounded-2xl border border-red-100 flex items-center gap-4 shadow-sm">
-                  <div className="w-10 h-10 bg-white rounded-xl shadow-sm flex items-center justify-center text-red-500">
-                    <Zap className="w-5 h-5 fill-current" />
+              <section className="px-6 mt-6 mb-6">
+                <div className="bg-white p-4 rounded-2xl flex items-center gap-2">
+                  {/* <div className="w-4 h-4 flex-shrink-0">
+                    <img src={bellIcon} alt="Alert" className="w-full h-full object-contain" />
+                  </div> */}
+                  <div className="whitespace-nowrap bg-[#EAEAEA] text-[#666666] text-[10px] font-bold px-2 py-0.5 rounded-full">
+                    공지
                   </div>
                   <div className="flex-1">
-                    <div className="text-[10px] text-red-500 font-black uppercase">Urgent</div>
-                    <div className="text-xs font-black text-slate-800">자동차 보험 만기가 7일 남았어요</div>
+                    <div className="text-sm font-semibold text-slate-800">자동차 보험 만기가 7일 남았어요.</div>
                   </div>
-                  <ChevronRight className="w-5 h-5 text-red-300" />
+                  <ChevronRight className="w-5 h-5 text-[#666666]" />
                 </div>
               </section>
 
               {/* POLICY LIST */}
               <section className="px-6 mb-8">
                 <div className="flex justify-between items-center mb-4 px-1">
-                  <h3 className="font-black text-slate-900 text-lg flex items-center gap-2">
-                    <Heart className="w-5 h-5 text-red-500 fill-current" /> 나의 보장
+                  <h3 className="font-semibold text-slate-900 text-lg flex items-center gap-2">
+                    나의 보장
                   </h3>
                 </div>
                 <div className="space-y-4">
@@ -325,7 +328,7 @@ const ActionButton: React.FC<{ icon: React.ReactNode; label: string; color: stri
           React.cloneElement(icon as React.ReactElement<any>, { className: "w-6 h-6" })
         )}
       </div>
-      <span className="text-[12px] font-normal text-slate-700 text-center leading-tight">{label}</span>
+      <span className="text-[12px] font-medium text-slate-700 text-center leading-tight">{label}</span>
     </div>
   );
 };
