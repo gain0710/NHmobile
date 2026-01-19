@@ -33,7 +33,7 @@ const App: React.FC = () => {
   const [viewMode, setViewMode] = useState<ViewMode>('wireframe');
 
   return (
-    <div className="min-h-screen bg-[#F5F8FB]">
+    <div className="min-h-screen bg-[#EFF3F7]">
       {/* Top Navigation Bar */}
       <div className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 px-6 py-4 flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-2">
@@ -334,7 +334,7 @@ const ActionButton: React.FC<{ icon: React.ReactNode; label: string; color: stri
 };
 
 const InsuranceCard: React.FC<{ title: string; status: string; price: string; date: string; isWarning?: boolean }> = ({ title, status, price, date, isWarning }) => (
-  <div className="p-5 bg-white rounded-[20px] transition-all cursor-pointer group">
+  <div className="p-5 bg-[#F5F8FB] rounded-[20px] transition-all cursor-pointer group">
     <div className="flex justify-between items-center mb-3">
       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${status === '정상' ? 'bg-blue-50 text-[#046fd9]' : 'bg-red-50 text-red-600'}`}>
         {status}
