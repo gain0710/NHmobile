@@ -261,8 +261,8 @@ const App: React.FC = () => {
               {/* POLICY LIST */}
               <section className="px-6 mb-8">
                 <div className="flex justify-between items-center mb-4 px-1">
-                  <h3 className="font-semibold text-slate-900 text-lg flex items-center gap-2">
-                    나의 보장
+                  <h3 className="text-lg font-bold text-slate-900">
+                    나의 보장 <span className="text-[#046fd9]">2</span>
                   </h3>
                 </div>
                 <div className="space-y-4">
