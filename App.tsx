@@ -336,15 +336,15 @@ const ActionButton: React.FC<{ icon: React.ReactNode; label: string; color: stri
 const InsuranceCard: React.FC<{ title: string; status: string; price: string; date: string; isWarning?: boolean }> = ({ title, status, price, date, isWarning }) => (
   <div className={`p-5 bg-white border ${isWarning ? 'border-red-100' : 'border-slate-100'} rounded-[20px] shadow-sm hover:shadow-md transition-all cursor-pointer group`}>
     <div className="flex justify-between items-center mb-3">
-      <span className={`text-[10px] font-black px-2.5 py-1 rounded-full ${status === '정상' ? 'bg-blue-50 text-[#046fd9]' : 'bg-red-50 text-red-600'}`}>
+      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${status === '정상' ? 'bg-blue-50 text-[#046fd9]' : 'bg-red-50 text-red-600'}`}>
         {status}
       </span>
       <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#046fd9] transition-colors" />
     </div>
-    <h4 className="font-semibold text-slate-900 text-base mb-4">{title}</h4>
+    <h4 className="font-bold text-slate-900 text-base mb-4">{title}</h4>
     <div className="flex justify-between items-center">
       <div className="text-[12px] font-medium text-slate-400">만기 {date}</div>
-      <div className="text-[18px] font-semibold text-slate-900">{price}원</div>
+      <div className="text-[18px] font-bold text-slate-900">{price}원</div>
     </div>
   </div>
 );
