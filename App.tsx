@@ -341,10 +341,10 @@ const InsuranceCard: React.FC<{ title: string; status: string; price: string; da
       </span>
       <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#046fd9] transition-colors" />
     </div>
-    <h4 className="font-black text-slate-900 text-sm mb-4">{title}</h4>
+    <h4 className="font-semibold text-slate-900 text-base mb-4">{title}</h4>
     <div className="flex justify-between items-center">
-      <div className="text-[10px] font-bold text-slate-400">만기 {date}</div>
-      <div className="text-sm font-black text-slate-900">{price}원</div>
+      <div className="text-[12px] font-medium text-slate-400">만기 {date}</div>
+      <div className="text-[18px] font-semibold text-slate-900">{price}원</div>
     </div>
   </div>
 );
