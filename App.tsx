@@ -21,6 +21,7 @@ import icon4 from './img/icon4.png';
 import mainLogoWhite from './img/main_logo_white.png';
 import warningIcon from './img/warning_icon.png';
 import bellIcon from './img/Bell.png';
+import statusBarImg from './img/Status.png';
 
 
 // NH NongHyup P&C Logo
@@ -105,12 +106,8 @@ const App: React.FC = () => {
           <div className="w-[393px] h-[852px] bg-[#EFF3F7] rounded-[47px] border-[12px] border-slate-900 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col">
 
             {/* Status Bar */}
-            <div className="h-12 bg-[#046fd9] flex items-center justify-between px-10 pt-4 text-white">
-              <span className="text-sm font-black">9:41</span>
-              <div className="flex gap-2 items-center">
-                <div className="w-4 h-4 rounded-full border-2 border-white"></div>
-                <div className="w-6 h-3 bg-white rounded-sm"></div>
-              </div>
+            <div className="h-12 bg-[#046fd9] flex-shrink-0">
+              <img src={statusBarImg} alt="Status Bar" className="w-full h-full object-cover" />
             </div>
 
             {/* Scrollable Content */}
