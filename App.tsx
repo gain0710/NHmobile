@@ -107,7 +107,7 @@ const App: React.FC = () => {
 
             {/* Status Bar */}
             <div className="h-12 bg-[#046fd9] flex-shrink-0 px-5">
-              <img src={statusBarImg} alt="Status Bar" className="w-full h-full object-contain" />
+              <img src={statusBarImg} alt="Status Bar" className="w-full h-full object-contain scale-110" />
             </div>
 
             {/* Scrollable Content */}
