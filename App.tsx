@@ -106,7 +106,7 @@ const App: React.FC = () => {
           <div className="w-[393px] h-[852px] bg-[#EFF3F7] rounded-[47px] border-[12px] border-slate-900 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col">
 
             {/* Status Bar */}
-            <div className="h-12 bg-[#046fd9] flex-shrink-0">
+            <div className="h-12 bg-[#046fd9] flex-shrink-0 px-5">
               <img src={statusBarImg} alt="Status Bar" className="w-full h-full object-cover" />
             </div>
 
