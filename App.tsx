@@ -101,7 +101,7 @@ const App: React.FC = () => {
         )}
 
         {/* Right: Mobile App UI (High-Fidelity) */}
-        <div className={`flex-none mx-auto bg-[#EFF3F7] ${viewMode === 'analysis' ? 'hidden xl:block' : 'block'}`}>
+        <div className={`flex-none mx-auto ${viewMode === 'analysis' ? 'hidden xl:block' : 'block'}`}>
           <div className="w-[393px] h-[852px] bg-[#EFF3F7] rounded-[47px] border-[12px] border-slate-900 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.25)] relative overflow-hidden flex flex-col">
 
             {/* Status Bar */}
@@ -347,8 +347,8 @@ const InsuranceCard: React.FC<{ title: string; status: string; price: string; da
 
 const NavItem: React.FC<{ label: string; active?: boolean }> = ({ label, active }) => (
   <div className="flex flex-col items-center gap-1.5 cursor-pointer group">
-    <div className={`w-1.5 h-1.5 rounded-full mb-1 transition-all ${active ? 'bg-[#046fd9]' : 'bg-transparent group-hover:bg-slate-200'}`}></div>
-    <span className={`text-[10px] font-black transition-colors ${active ? 'text-[#046fd9]' : 'text-slate-400 group-hover:text-slate-600'}`}>{label}</span>
+    <div className={`w-1.5 h-1.5 rounded-full transition-all ${active ? 'bg-[#046fd9]' : 'bg-transparent group-hover:bg-slate-200'}`}></div>
+    <span className={`text-sm font-medium transition-colors ${active ? 'text-[#046fd9]' : 'text-slate-400 group-hover:text-slate-600'}`}>{label}</span>
   </div>
 );
 
