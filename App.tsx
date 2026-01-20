@@ -235,7 +235,7 @@ const App: React.FC = () => {
               {/* QUICK ACTIONS */}
               <section className="px-6 mb-4">
                 <div className="grid grid-cols-4 gap-6">
-                  <ActionButton icon={<img src={icon3} alt="보험금청구" />} label="보험금청구" color="blue" />
+                  <ActionButton icon={<img src={icon3} alt="긴급출동" />} label="긴급출동" color="blue" />
                   <ActionButton icon={<img src={icon2} alt="계약조회" />} label="계약조회" color="brandBlue" />
                   <ActionButton icon={<img src={icon1} alt="보험료납입" />} label="보험료납입" color="orange" />
                   <ActionButton icon={<img src={icon4} alt="보장분석" />} label="보장분석" color="purple" />
@@ -294,7 +294,7 @@ const App: React.FC = () => {
               <NavItem label="마이보험" />
               <NavItem label="상품추천" />
               <NavItem label="혜택" />
-              <NavItem label="전체" />
+              <NavItem label="고객센터" />
             </nav>
 
             {/* Home Indicator */}
@@ -331,11 +331,11 @@ const ActionButton: React.FC<{ icon: React.ReactNode; label: string; color: stri
 
 const InsuranceCard: React.FC<{ title: string; status: string; price: string; date: string; isWarning?: boolean }> = ({ title, status, price, date, isWarning }) => (
   <div className="p-5 bg-white rounded-[20px] transition-all cursor-pointer group">
-    <div className="flex justify-between items-center mb-3">
+    <div className="flex justify-between items-center mb-[10px]">
       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${status === '정상' ? 'bg-blue-50 text-[#046fd9]' : 'bg-red-50 text-red-600'}`}>
         {status}
       </span>
-      <ChevronRight className="w-4 h-4 text-slate-300 group-hover:text-[#046fd9] transition-colors" />
+      <ChevronRight className="w-5 h-5 text-[#666666]" />
     </div>
     <h4 className="font-bold text-slate-900 text-base mb-4">{title}</h4>
     <div className="flex justify-between items-center">
