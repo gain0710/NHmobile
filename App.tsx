@@ -30,6 +30,67 @@ const NH_LOGO_URL = mainLogoWhite;
 // 사용자가 제공한 3D 캐리어와 모자 이미지 (고해상도 3D 에셋)
 const TRAVEL_3D_ASSET_URL = travelImage;
 
+const LayoutIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+  </svg>
+);
+
+const DirectionCard: React.FC<{ title: string; description: string }> = ({ title, description }) => (
+  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+    <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+      <div className="w-2.5 h-2.5 bg-[#046fd9] rounded-full"></div>
+    </div>
+    <h4 className="font-black text-slate-900 mb-2">{title}</h4>
+    <p className="text-slate-500 text-sm leading-relaxed font-medium">{description}</p>
+  </div>
+);
+
+const NavItem: React.FC<{ label: string; active?: boolean }> = ({ label, active }) => (
+  <div className="flex flex-col items-center gap-1.5 cursor-pointer group">
+    <div className={`w-1.5 h-1.5 rounded-full transition-all ${active ? 'bg-[#046fd9]' : 'bg-transparent group-hover:bg-slate-200'}`}></div>
+    <span className={`text-sm font-medium transition-colors ${active ? 'text-[#046fd9]' : 'text-slate-400 group-hover:text-slate-600'}`}>{label}</span>
+  </div>
+);
+
+const InsuranceCard: React.FC<{ title: string; status: string; price: string; date: string; isWarning?: boolean }> = ({ title, status, price, date, isWarning }) => (
+  <div className="p-5 bg-white rounded-[20px] transition-all cursor-pointer group">
+    <div className="flex justify-between items-center mb-[10px]">
+      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${status === '정상' ? 'bg-blue-50 text-[#046fd9]' : 'bg-red-50 text-red-600'}`}>
+        {status}
+      </span>
+      <ChevronRight className="w-5 h-5 text-[#666666]" />
+    </div>
+    <h4 className="font-bold text-slate-900 text-base mb-4">{title}</h4>
+    <div className="flex justify-between items-center">
+      <div className="text-[12px] font-medium text-slate-400">만기 {date}</div>
+      <div className="text-[18px] font-bold text-slate-900">{price}원</div>
+    </div>
+  </div>
+);
+
+const ActionButton: React.FC<{ icon: React.ReactElement<any>; label: string; color: string; highlight?: boolean }> = ({ icon, label, color, highlight }) => {
+  const colorMap: any = {
+    blue: "text-blue-500",
+    brandBlue: "text-[#046fd9]",
+    orange: "text-orange-500",
+    purple: "text-purple-500"
+  };
+
+  return (
+    <div className="flex flex-col items-center gap-2 cursor-pointer group">
+      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:bg-slate-50 overflow-hidden ${colorMap[color]} ${highlight ? 'ring-2 ring-[#046fd9]/20' : ''}`}>
+        {icon.type === 'img' ? (
+          icon
+        ) : (
+          React.cloneElement(icon, { className: "w-6 h-6" })
+        )}
+      </div>
+      <span className="text-[12px] font-medium text-slate-700 text-center leading-tight">{label}</span>
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   const [viewMode, setViewMode] = useState<ViewMode>('wireframe');
 
@@ -304,65 +365,6 @@ const App: React.FC = () => {
   );
 };
 
-const ActionButton: React.FC<{ icon: React.ReactNode; label: string; color: string; highlight?: boolean }> = ({ icon, label, color, highlight }) => {
-  const colorMap: any = {
-    blue: "text-blue-500",
-    brandBlue: "text-[#046fd9]",
-    orange: "text-orange-500",
-    purple: "text-purple-500"
-  };
 
-  return (
-    <div className="flex flex-col items-center gap-2 cursor-pointer group">
-      <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:bg-slate-50 overflow-hidden ${colorMap[color]} ${highlight ? 'ring-2 ring-[#046fd9]/20' : ''}`}>
-        {React.isValidElement(icon) && icon.type === 'img' ? (
-          icon
-        ) : (
-          React.cloneElement(icon as React.ReactElement<any>, { className: "w-6 h-6" })
-        )}
-      </div>
-      <span className="text-[12px] font-medium text-slate-700 text-center leading-tight">{label}</span>
-    </div>
-  );
-};
-
-const InsuranceCard: React.FC<{ title: string; status: string; price: string; date: string; isWarning?: boolean }> = ({ title, status, price, date, isWarning }) => (
-  <div className="p-5 bg-white rounded-[20px] transition-all cursor-pointer group">
-    <div className="flex justify-between items-center mb-[10px]">
-      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap ${status === '정상' ? 'bg-blue-50 text-[#046fd9]' : 'bg-red-50 text-red-600'}`}>
-        {status}
-      </span>
-      <ChevronRight className="w-5 h-5 text-[#666666]" />
-    </div>
-    <h4 className="font-bold text-slate-900 text-base mb-4">{title}</h4>
-    <div className="flex justify-between items-center">
-      <div className="text-[12px] font-medium text-slate-400">만기 {date}</div>
-      <div className="text-[18px] font-bold text-slate-900">{price}원</div>
-    </div>
-  </div>
-);
-
-const NavItem: React.FC<{ label: string; active?: boolean }> = ({ label, active }) => (
-  <div className="flex flex-col items-center gap-1.5 cursor-pointer group">
-    <div className={`w-1.5 h-1.5 rounded-full transition-all ${active ? 'bg-[#046fd9]' : 'bg-transparent group-hover:bg-slate-200'}`}></div>
-    <span className={`text-sm font-medium transition-colors ${active ? 'text-[#046fd9]' : 'text-slate-400 group-hover:text-slate-600'}`}>{label}</span>
-  </div>
-);
-
-const DirectionCard: React.FC<{ title: string; description: string }> = ({ title, description }) => (
-  <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-    <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
-      <div className="w-2.5 h-2.5 bg-[#046fd9] rounded-full"></div>
-    </div>
-    <h4 className="font-black text-slate-900 mb-2">{title}</h4>
-    <p className="text-slate-500 text-sm leading-relaxed font-medium">{description}</p>
-  </div>
-);
-
-const LayoutIcon: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
-  </svg>
-);
 
 export default App;
